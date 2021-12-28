@@ -1,4 +1,4 @@
-name = print("Type your name: ")
+name = input("Type your name: ")
 
 print("Welcome", name, "to this adventure!")
 
@@ -8,12 +8,28 @@ if answer == "left":
     answer = input("You come to a river, you can walk around it or swim across? Type walk to walk around, or swim to swim across? ")
 
     if answer == "swim":
-        print("You swim across and you were eaten by an aligator.")
+        print("You swam across and you were eaten by an aligator.")
     elif answer == "walk":
-        print("You walked for many miles, you ran out of water and you lost the game.")
+        print("You walked for many miles, ran out of water and you lost the game.")
     else:
         print("Not a valid option. You lose.")
+
 elif answer == "right":
-    pass
+    answer = input("You come to a bridge, looks a bit wobbly, do you want to cross it, or head back (cross / back)")
+    
+    if answer == "back":
+        print("You go back and lose.")
+    elif answer == "cross":
+        answer = input("You cross the bridge and meet a stranger. Do you talk to them? ")
+
+        if answer == "yes":
+            print("You talk to the strangers and they give you gold. You WIN!")
+        elif answer == "no":
+            print("You ignore the stranger and they are offended and you lose.")
+        else:
+            print("Not a valid option. You lose.")
+
 else:
     print("Not a valid option. You lose.")
+
+print("Thank you for playing", name)
